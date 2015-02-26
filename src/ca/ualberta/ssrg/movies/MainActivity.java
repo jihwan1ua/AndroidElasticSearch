@@ -74,6 +74,10 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+		// app should start with all movies listed
+
+		Thread thread = new SearchThread();
+		thread.start();
 		
 		
 
@@ -132,6 +136,11 @@ public class MainActivity extends Activity {
 
 	class SearchThread extends Thread {
 		// TODO: Implement search thread
+		// search all the movies
+
+		public void run() {
+			movieManager.getMovies();
+		}
 		
 	}
 

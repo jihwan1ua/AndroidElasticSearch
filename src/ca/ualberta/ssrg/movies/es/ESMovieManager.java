@@ -44,6 +44,7 @@ public class ESMovieManager {
 	 */
 	public Movie getMovie(int id) {
 		SearchHit<Movie> sr = null;
+		// DefaultHttpClient can let us use Http commands
 		HttpClient httpClient = new DefaultHttpClient();
 		HttpGet httpGet = new HttpGet(movies.getResourceUrl() + id);
 
